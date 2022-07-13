@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><h3>Welcome to Rock Paper Scissors. Please enter your name.</h3></div>
+    <div><form>
+        <input type="text" name="name" placeholder="Your first name here" id="myName">
+    </form></div>
+    <form>
+        <button type="button" onclick="getName();">Submit</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <div id="heading1" style="display:none;">
+        <button type="button" onclick="getUserChoice('rock')" data-inline="true">Rock</button>
+        <button type="button" onclick="getUserChoice('paper')" data-inline="true">Paper</button>
+        <button type="button" onclick="getUserChoice('scissors')" data-inline="true">Scissors</button>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
