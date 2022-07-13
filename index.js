@@ -13,12 +13,6 @@ function displayGame() {
 
 name = name.toLowerCase()
 
-// function gameOutput(text) {
-//     var heading1 = document.getElementById("heading1");
-//     heading1.firstChild.nodeValue = text
-// }
-
-// container.outerHTML = "<strong> FOO BAR!</strong>";
 
 function getUserChoice(rps) {
     let userChoice=rps
