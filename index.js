@@ -11,10 +11,11 @@ function displayGame() {
     }
 }
 
-name = name.toLowerCase()
+// name = name.toLowerCase()
 
 
 function getUserChoice(rps) {
+    name = name.toLowerCase()
     let userChoice=rps
     let container = document.getElementById("container");
     var computerChoice = Math.random();
@@ -85,7 +86,5 @@ function getUserChoice(rps) {
             }
                 }
 }
-
-
 
 
