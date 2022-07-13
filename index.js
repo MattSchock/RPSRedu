@@ -1,8 +1,10 @@
-let name = ''
+var name = ''
 function getName() {
-    name=document.getElementById('myName').value;
+    name = document.getElementById("myname").value;
     displayGame();
 }
+
+
 
 function displayGame() {
     var target = document.getElementById('heading1')
@@ -16,6 +18,7 @@ function displayGame() {
 
 function getUserChoice(rps) {
     name = name.toLowerCase()
+    console.log(name);
     let userChoice=rps
     let container = document.getElementById("container");
     var computerChoice = Math.random();
