@@ -18,6 +18,7 @@ function displayGame() {
 
 function getUserChoice(rps) {
     name = name.toLowerCase()
+    name = name.replace(/\s+/g, '');
     console.log(name);
     let userChoice=rps
     let container = document.getElementById("container");
