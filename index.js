@@ -1,3 +1,4 @@
+//Passes value from name field to JS
 var name = ''
 function getName() {
     name = document.getElementById("myname").value;
@@ -5,7 +6,7 @@ function getName() {
 }
 
 
-
+//Toggles visibility of rock paper scissors game in HTML
 function displayGame() {
     var target = document.getElementById('heading1')
     if (target.style.display == 'none') {
@@ -13,9 +14,9 @@ function displayGame() {
     }
 }
 
-// name = name.toLowerCase()
 
 
+//Game logic based on name.
 function getUserChoice(rps) {
     name = name.toLowerCase()
     name = name.replace(/\s+/g, '');
