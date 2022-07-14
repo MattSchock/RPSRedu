@@ -50,9 +50,7 @@ function getUserChoice(rps) {
         } else {
             alert('unexpected choice.');
         }
-    } else if (name ==='scott'){
-        prompt('You lose get wrecked nerd');
-    } else if (name === 'lewis') {
+    }  else if (name === 'lewis') {
         if (userChoice === 'rock') {
             container.outerHTML = "<strong>you chose rock, computer chose paper, you lose!'</strong>"
         } else if (userChoice === 'paper') {
