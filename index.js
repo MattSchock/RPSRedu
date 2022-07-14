@@ -14,16 +14,26 @@ function displayGame() {
     }
 }
 
+let playerScore = 0;
+let computerScore = 0;
 
-
-//Game logic based on name.
+//Game logic based on name.   refactor to fisher-yates random
 function getUserChoice(rps) {
+    let playerscorehtml = document.getElementById("playerscorehtml");
+    let computerscorehtml = document.getElementById("computerscorehtml");
     name = name.toLowerCase()
     name = name.replace(/\s+/g, '');
     console.log(name);
+    console.log(playerScore);
     let userChoice=rps
     let container = document.getElementById("container");
+    // let answerContainer = document.createElement('div');
+    // answerContainer.id = "answerId"
+    // container.appendChild(answerContainer);
+    // document.getElementById("container").outerHTML = "";
+    console.log(container);
     var computerChoice = Math.random();
+    console.log(computerChoice);
         if (computerChoice < 0.34) {
             computerChoice = 'rock';
         } else if (computerChoice <= 0.67) {
@@ -33,61 +43,121 @@ function getUserChoice(rps) {
             }
     if (name === "matt") {
         if (userChoice === 'rock') {
-            container.outerHTML = "<strong> You chose rock, computer picked scissors, congrats you win!</strong>"
+            playerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong> You chose rock, computer picked scissors, congrats you win!</strong>"
         } else if (userChoice === 'paper') {
-            container.outerHTML = "<strong> you chose paper, computer chose rock, congrats you win!</strong>"
+            playerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong> you chose paper, computer chose rock, congrats you win!</strong>"
         } else if (userChoice === 'scissors') {
-            container.outerHTML = "<strong>you chose scissors, computer chose paper, congrats you win!</strong>"
+            playerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong>you chose scissors, computer chose paper, congrats you win!</strong>"
         } else {
             alert('unexpected choice.');
         }
     } else if (name === 'jolie') {
         if (userChoice === 'rock') {
-            container.outerHTML = "<strong>you chose rock, computer chose paper, you lose!'</strong>"
+            computerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong>you chose rock, computer chose paper, you lose!'</strong>"
         } else if (userChoice === 'paper') {
-            container.outerHTML = "<strong>you chose paper, computer chose scissors, you lose!'</strong>"
+            computerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong>you chose paper, computer chose scissors, you lose!'</strong>"
         } else if (userChoice === 'scissors') {
-            container.outerHTML = "<strong>you chose scissors, computer chose rock, you lose!'</strong>"
+            computerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong>you chose scissors, computer chose rock, you lose!'</strong>"
         } else {
             alert('unexpected choice.');
         }
     }  else if (name === 'lewis') {
         if (userChoice === 'rock') {
-            container.outerHTML = "<strong>you chose rock, computer chose paper, you lose!'</strong>"
+            computerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong>you chose rock, computer chose paper, you lose!'</strong>"
         } else if (userChoice === 'paper') {
-            container.outerHTML = "<strong>you chose paper, computer chose scissors, you lose!'</strong>"
+            computerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong>you chose paper, computer chose scissors, you lose!'</strong>"
         } else if (userChoice === 'scissors') {
-            container.outerHTML = "<strong>you chose scissors, computer chose rock, you lose!'</strong>"
+            computerScore++
+            computerscorehtml.innerHTML=`${computerScore}`;
+            playerscorehtml.innerHTML=`${playerScore}`;
+            container.innerHTML = "<strong>you chose scissors, computer chose rock, you lose!'</strong>"
         } else {
             alert('unexpected choice.');
         }
     }  else {
                 
             if (userChoice === computerChoice) {
-                container.outerHTML = "<strong>you chose " +  `${userChoice}` + ", computer chose " +  `${computerChoice}` + ".  Tie game!`</strong>"
+                console.log('test', computerChoice);
+                computerscorehtml.innerHTML=`${computerScore}`;
+                playerscorehtml.innerHTML=`${playerScore}`;
+                container.innerHTML = "<strong>you chose " +  `${userChoice}` + ", computer chose " +  `${computerChoice}` + ".  Tie game!`</strong>"
+                return;
             } else if (userChoice === 'rock') {
                 if (computerChoice === 'paper') {
-                    container.outerHTML = "<strong>you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` +  "computer wins!</strong>"
+                    computerScore++
+                    computerscorehtml.innerHTML=`${computerScore}`;
+                    playerscorehtml.innerHTML=`${playerScore}`;
+                    console.log('computerchoice', computerChoice);
+                    container.innerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` +  "computer wins!</strong>"
+                    return;
                 } else if (computerChoice === 'scissors') {
-                    container.outerHTML = "<strong> you chose " +  `${userChoice}` + ", computer chose " + `${computerChoice}` + ", you win!</strong>"
+                    playerScore++
+                    computerscorehtml.innerHTML=`${computerScore}`;
+                    playerscorehtml.innerHTML=`${playerScore}`;
+                    console.log('computerchoice', computerChoice);
+                    container.innerHTML = "<strong> you chose " +  `${userChoice}` + ", computer chose " + `${computerChoice}` + ", you win!</strong>"
+                    return;
                 }
             } else if (userChoice === 'paper') {
                 if (computerChoice === 'rock') {
-                    container.outerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` +  "You Win!</strong>"
+                    playerScore++
+                    computerscorehtml.innerHTML=`${computerScore}`;
+                    playerscorehtml.innerHTML=`${playerScore}`;
+                    console.log('test', computerChoice);
+                    container.innerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` +  "You Win!</strong>"
+                    return;
                 } else if (computerChoice === 'scissors') {
-                    container.outerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` + ", you lose! </strong>"
+                    computerScore++
+                    computerscorehtml.innerHTML=`${computerScore}`;
+                    playerscorehtml.innerHTML=`${playerScore}`;
+                    console.log('test', computerChoice);
+                    container.innerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` + ", you lose! </strong>"
+                    return;
                 }
             } else if (userChoice === 'scissors') {
                 if (computerChoice === 'paper') {
-                    container.outerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` + ", You Win!</strong>"
+                    playerScore++
+                    computerscorehtml.innerHTML=`${computerScore}`;
+                    playerscorehtml.innerHTML=`${playerScore}`;
+                    console.log(`test`,computerChoice);
+                    container.innerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` + ", You Win!</strong>"
+                    return;
                     }   else if (computerChoice === 'rock') {
-                        container.outerHTML = "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` + ", you lose!</strong>"
+                        computerScore++
+                        computerscorehtml.innerHTML=`${computerScore}`;
+                    playerscorehtml.innerHTML=`${playerScore}`;
+                        console.log(computerChoice);
+                        container.innerHTML =  "<strong> you chose " + `${userChoice}` + ", computer chose " + `${computerChoice}` + ", you lose!</strong>"
+                        return;
                     }
                         
             }  else {
                 alert('unexpected choice please try again');
+                return;
             }
                 }
 }
-
-
