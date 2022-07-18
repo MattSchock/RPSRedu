@@ -5,28 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-    <div><h1>Welcome to Rock Paper Scissors.</h1></div>
-    <h3>Please enter your name.</h3>
-    <div><form>
+    <div id="header" class="alert alert-dark"><h1>Welcome to Rock Paper Scissors.</h1></div>
+    <h3 class="alert alert-primary" role="alert">Please enter your name.</h3>
+    <div><form class="form-control">
         <input type="text" name="name" id="myname" placeholder="Your first name here">
     </form></div>
     <form>
-        <button type="button" onclick="getName();">Submit</button>
+        <button type="button" class="btn btn-primary" onclick="getName();">Submit</button>
     </form>
     <br>
-    <div id="heading1" style="display:none;">
+    <div class="btn-group" role="group" aria-label="Basic example" id="heading1" style="display:none;">
         <p>Please Select your choice below.</p>
-        <button type="button" onclick="getUserChoice('rock')" data-inline="true">Rock</button>
-        <button type="button" onclick="getUserChoice('paper')" data-inline="true">Paper</button>
-        <button type="button" onclick="getUserChoice('scissors')" data-inline="true">Scissors</button>
+        <button type="button" class="btn btn-secondary" onclick="getUserChoice('rock')" data-inline="true">Rock</button>
+        <button type="button" class="btn btn-secondary" onclick="getUserChoice('paper')" data-inline="true">Paper</button>
+        <button type="button" class="btn btn-secondary" onclick="getUserChoice('scissors')" data-inline="true">Scissors</button>
         <br>
-        <div>Player Score=</div>
-    <div id="playerscorehtml"></div>
+        <div class="alert alert-success">Player Score=</div>
+    <div class="alert alert-success" id="playerscorehtml"></div>
     <br>
-    <div>Computer Score=</div>
-    <div id="computerscorehtml"></div>
+    <div class="alert alert-danger" >Computer Score=</div>
+    <div class="alert alert-danger" id="computerscorehtml"></div>
         <div id="container"> </div>
     </div>
     
